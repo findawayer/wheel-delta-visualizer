@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <title>Wheel Delta Visualizer</title>
+    <meta
+      name="description"
+      content="Visualize delta values from wheel event in the end-user's browser"
+    />
+    <meta name="robots" content="index, nofollow" />
+    <meta name="author" content="findawayer" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@findawayer" />
+    <meta name="twitter:title" content="Wheel Delta Visualizer" />
+    <meta
+      name="twitter:description"
+      content="Visualize delta values from wheel event in the end-user's browser"
+    />
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital@0;1&display=swap"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="content-sizer-x">
+      <div class="content-sizer-y">
+        <div class="content-body">
+          <div id="browser" class="browser"></div>
+          <p id="instructions" class="instructions">
+            Scroll mouse wheel to see the delta.
+          </p>
+          <div id="visualizer" class="event-visualizer" hidden>
+            <div id="wheel" class="event">
+              <h2 id="wheel" class="event-type">wheel</h2>
+              <ul class="event-data">
+                <li class="not-supported">Not supported</li>
+              </ul>
+            </div>
+            <div id="mousewheel" class="event">
+              <h2 class="event-type">mousewheel</h2>
+              <ul class="event-data">
+                <li class="not-supported">Not supported</li>
+              </ul>
+            </div>
+            <div id="DOMMouseScroll" class="event">
+              <h2 class="event-type">DOMMouseScroll</h2>
+              <ul class="event-data">
+                <li class="not-supported">Not supported</li>
+              </ul>
+            </div>
+            <div id="MozMousePixelScroll" class="event">
+              <h2 class="event-type">MozMousePixelScroll</h2>
+              <ul class="event-data">
+                <li class="not-supported">Not supported</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      Meet wheel-delta-visualizer on
+      <a
+        class="github"
+        href="https://github.com/findawayer/wheel-delta-visualizer"
+        rel="external noopener noreferrer"
+        target="_blank"
+        >GitHub repository</a
+      >
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>

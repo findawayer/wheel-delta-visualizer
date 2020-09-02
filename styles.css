@@ -1,0 +1,146 @@
+/**
+ * wheel-delta-visualizer
+ *
+ * Color scheme by Material Design (https://material.io/)
+ * - background: #232f34
+ * - text: #ebeced
+ * - fade: #919196
+ * - accent: #f9aa33
+ */
+
+html,
+body {
+  height: 100%;
+  font-size: large;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  color: #ebeced;
+  background-color: #232f34;
+  line-height: 1.7em;
+  font-family: 'Mulish', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  touch-action: manipulation;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.content-sizer-x {
+  display: table;
+  width: 100%;
+  max-width: 1000px;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content-sizer-y {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.content-body {
+  position: relative;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 1rem;
+  left: 0;
+  text-align: center;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.instructions {
+  padding: 0 10%;
+  color: #919196;
+  line-height: 1.3em;
+  font-size: 2rem;
+  font-style: italic;
+  user-select: none;
+}
+
+.event-visualizer {
+  margin: 0 -20px;
+  overflow: auto;
+  text-align: left;
+}
+
+.event {
+  float: left;
+  width: 25%;
+  min-height: 1px;
+  margin-bottom: 20px;
+  padding: 0 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.event-type {
+  margin: 0 0 0.75em;
+  color: #f9aa33;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.event-data {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.event-data li {
+  clear: both;
+  margin: 0;
+  line-height: 2em;
+}
+
+.event-data em {
+  float: left;
+  color: #919196;
+  font-style: normal;
+}
+
+.event-data span {
+  float: right;
+  text-align: right;
+}
+
+.event-data .not-supported {
+  color: #919196;
+  font-style: italic;
+}
+
+.github {
+  color: #f9aa33;
+  text-decoration-skip: objects;
+}
+
+.github:focus,
+.github:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .event {
+    width: 50%;
+  }
+}
