@@ -1,11 +1,44 @@
 (function ($) {
   var scrolled = false;
-  var cache = {
-    wheel: {},
-    mousewheel: {},
-    DOMMouseScroll: {},
-    MozMousePixelScroll: {}
-  };
+  var cache = initCache();
+
+  function initCache() {
+    var object = {};
+    var events = [
+      'wheel',
+      'mousewheel',
+      'DOMMouseScroll',
+      'MozMousePixelScroll'
+    ];
+    var keys = [
+      'delta',
+      'deltaX',
+      'deltaY',
+      'detail',
+      'wheelDelta',
+      'wheelDeltaX',
+      'wheelDeltaY'
+    ];
+    var i = 0;
+    var j = 0;
+    var type;
+    var key;
+
+    while (events[i]) {
+      type = events[i];
+      object[type] = {};
+
+      while (keys[j]) {
+        key = keys[j];
+        object[type][key] = null;
+        j += 1;
+      }
+
+      i += 1;
+    }
+
+    return object;
+  }
 
   function addEvent(target, type, listener) {
     if (target.addEventListener) {
@@ -68,7 +101,8 @@
     for (key in delta) {
       if (delta.hasOwnProperty(key)) {
         value = delta[key];
-        html += '<li><em>' + key + '</em><span>' + value + '</span></li>';
+        html +=
+          '<li><em>' + key + '</em><span>' + String(value) + '</span></li>';
       }
     }
     list.innerHTML = html;
@@ -81,7 +115,6 @@
     }
     var difference = diff(event);
     if (difference) {
-      console.log(difference);
       assign(difference);
       updateText(difference);
     }
